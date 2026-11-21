@@ -51,7 +51,7 @@ select
     FROM coba;
 ```
 
-![Hasil pengerjaan soal nomor 2](<img width="1507" height="681" alt="image" src="https://github.com/user-attachments/assets/edbdf0aa-33cc-45a9-ae0b-8f5ca7abadcc" />)
+![Hasil pengerjaan soal nomor 2](https://github.com/user-attachments/assets/edbdf0aa-33cc-45a9-ae0b-8f5ca7abadcc)
 
 Berikut merupakan nilai dari pengerjaan soal No 2.
 
