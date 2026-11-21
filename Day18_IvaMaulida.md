@@ -37,3 +37,24 @@ Lalu di luar CTE baru saya select untuk menampilkan kolom apa saja ya dibutuhkan
 ## SOAL NO. 2
 
 ### Query:
+
+```sql
+WITH coba AS(
+    SELECT MIN(LAT_N) AS a,
+    MIN(LONG_W) AS b,
+    MAX(LAT_N) AS c,
+    MAX(LONG_W) AS d
+    FROM STATION
+)
+select
+    ROUND(ABS(c-a) + ABS(d-b),4)
+    FROM coba;
+```
+
+![Hasil pengerjaan soal nomor 2](<img width="1507" height="681" alt="image" src="https://github.com/user-attachments/assets/edbdf0aa-33cc-45a9-ae0b-8f5ca7abadcc" />)
+
+Berikut merupakan nilai dari pengerjaan soal No 2.
+
+Pada soal no 2, saya menggunakan CTE terlebih dahulu untuk melakukan agregasi menggunakan MIN dan MAX
+
+Lalu di luar CTE baru saya melakukan perhitungan jarak dengan menggunakan fungsi agregasi Absolute berdasarkan nilai yang sudah diambil dari CTE
