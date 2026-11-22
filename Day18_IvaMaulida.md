@@ -178,8 +178,21 @@ ORDER BY score desc, hacker_id
 
 Berikut merupakan nilai dari pengerjaan soal No 5.
 
-
 Pada soal no 5
 Saya membuat CTE pertama yang berfungsi untuk menampilkan MAX(Score) dengan filter GROUP berdasarkan hacker_id dan challenge_id. Pada CTE kedua saya berfungsi untuk JOIN table hasil CTE pertama yaitu COBA dengan table Hackers.<br>
 
 Pada akhir SELECT menampilkan hacker_id, name, dan juga melakukan penjumlahan max_score dengan Alias score yang berasal dari tabel coba2 , dengan grouping berdasarkan hacekr_id lalu nama. Setelah itu melakukan filter max_score harus lebih dari 0 dan diurutkan berdasarkan scroe terbesar lalu hascker id secara ascending.
+
+
+## Pertanyaan Refleksi
+### NO 1
+
+Dalam menentukan query saya biasanya melihat dulu dari kebutuhan soal dan data apa yang akan dihasilkan, lalu juga pahami hubungan antar tabel dan proses apa saja yang diperlukan. kalau query masih sederhana dan hanya butuh data antar table biasa, cukup menggunakan JOIN saja. tetapi jika terdiri dari beberapa tahapan saya akan menggunakan CTE agar query lebih simple. Sedangkan untuk window function digunakan ketika perlu melakukan perankingan atau perhitungan berdsarkan group tanpa menggabungkan baris. Lalu pada soal kali ini juga terdapat bantuan tambahan yang ada pada elearning dibimbing <br> <br>
+
+### NO 2
+
+Setelah mengerjakan seluluruh soal, teknik lanjutan yang baru saya sadari dan sangat penting yaitu teknik CTE. Karena saya merasa lebih rapih dan lebih terstruktur untuk melakukan query yang cukup rumit.
+
+
+
+
