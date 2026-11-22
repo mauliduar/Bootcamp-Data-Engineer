@@ -140,6 +140,46 @@ order by power desc, age desc;
 
 Berikut merupakan nilai dari pengerjaan soal No 4.
 
+
 Pada soal no 4
 Saya membuat CTE yang berfungsi untuk menampilkan id, age, coins_needed, power, dan juga menghitung biaya minimum coin dengan filter umur serta power yang menggunakan window function, lalu tidak lupa untuk men JOIN kan kedua table yg ada yaitu table Wands dan Wands_Property.<br>
 Pada akhir, akan melakukan pemanggilan mpada tabel hasil CTE(gabung) dengan menggunakan WHERE kondisi coins_needed = coins_min dan diurutkan bedasarkan power terbesar dan umur tertinggi.
+
+## SOAL NO. 5
+
+### Query:
+
+```sql
+
+WITH coba AS(
+    select hacker_id, challenge_id,
+    MAX(score) as max_score
+    from submissions 
+    GROUP BY hacker_id, challenge_id
+),
+coba2 AS(
+    select
+    h.hacker_id, h.name, c.challenge_id, c.max_score
+    from hackers h 
+    INNER JOIN coba c 
+    ON h.hacker_id = c.hacker_id
+)
+select hacker_id,
+name,
+sum(max_score) as score
+from coba2
+GROUP BY hacker_id, name 
+HAVING sum(max_score) > 0
+ORDER BY score desc, hacker_id
+
+```
+
+![Hasil pengerjaan soal nomor 5](https://github.com/user-attachments/assets/99502ec4-61b2-4093-9794-6f10e0423054)
+
+Berikut merupakan nilai dari pengerjaan soal No 5.
+
+
+Pada soal no 5
+Saya membuat CTE pertama yang berfungsi untuk menampilkan MAX(Score) dengan filter GROUP berdasarkan hacker_id dan challenge_id. Pada CTE kedua saya berfungsi untuk JOIN table hasil CTE pertama yaitu COBA dengan table Hackers.<br>
+
+Pada akhir SELECT menampilkan hacker_id, name, dan juga melakukan penjumlahan max_score dengan Alias score yang berasal dari tabel coba2 , dengan grouping berdasarkan hacekr_id lalu nama. Setelah itu melakukan filter max_score harus lebih dari 0 dan diurutkan berdasarkan scroe terbesar lalu hascker id secara ascending.
